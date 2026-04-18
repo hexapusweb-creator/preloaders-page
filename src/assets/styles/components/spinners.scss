@@ -1,0 +1,48 @@
+.preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 9999;
+  background-color: var(--bg-dark);
+
+  .spinner_area {
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin: -40px 0 0 -40px;
+  }
+
+  .bouncing {
+    display: flex;
+    justify-content: center;
+
+    div {
+      width: 13px;
+      height: 13px;
+      margin: 32px 3px;
+      background-color: var(--tertiary-color);
+      border-radius: 50%;
+      // animation: bouncing-loader 0.6s infinite alternate;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+        background: var(--secondary-color);
+      }
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+        background: var(--secondary-color);
+      }
+    }
+  }
+}
+
+@keyframes bouncing-loader {
+  to {
+    opacity: 0.1;
+    transform: translate3d(0, -16px, 0);
+  }
+}
