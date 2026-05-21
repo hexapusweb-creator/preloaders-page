@@ -9,4 +9,4 @@ function handleDisablePreloader(selector, time){
  }, time);
 }
 
-// handleDisablePreloader('.preloader', 5000);
+handleDisablePreloader('.preloader', 5000);

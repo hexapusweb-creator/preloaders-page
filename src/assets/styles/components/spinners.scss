@@ -38,11 +38,62 @@
       }
     }
   }
+
+  .ping_pong {
+    width: 82px;
+    height: 18px;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      left: 50%;
+      transform: translate(-50%, 10%);
+      top: 0;
+      background: var(--secondary-color);
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      animation: jump 0.5s ease-in infinite alternate;
+    }
+    &::after {
+      background: #fff;
+      color: var(--tertiary-color);
+      top: 100%;
+      box-shadow:
+        32px -20px,
+        -32px -20px;
+      animation: split 0.5s ease-out infinite alternate;
+    }
+  }
 }
 
 @keyframes bouncing-loader {
   to {
     opacity: 0.1;
     transform: translate3d(0, -16px, 0);
+  }
+}
+
+@keyframes split {
+  0% {
+    box-shadow:
+      8px -20px,
+      -8px -20px;
+  }
+  100% {
+    box-shadow:
+      32px -20px,
+      -32px -20px;
+  }
+}
+
+@keyframes jump {
+  0% {
+    transform: translate(-50%, -150%);
+  }
+  100% {
+    transform: translate(-50%, -10%);
   }
 }
